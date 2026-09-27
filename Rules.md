@@ -1,8 +1,13 @@
-# CLAUDE.md: Regole AdBlock (`ABP/`)
+# Rules.md: Regole AdBlock (`ABP/`)
 
 > **Cos'è questo file.** Le regole del progetto **'Roccobot ABP'**, le liste di
 > filtri AdBlock/AdGuard di questa cartella. Si carica quando si legge un file di
 > qui; le regole trasversali vivono nel `CLAUDE.md` di **root**.
+> Vale per **tutti gli agenti**: il nucleo, cioè ogni regola in una riga, vive in `AGENTS.md`,
+> e questo file ne dà il perché. Claude Code lo carica da sé, perché `CLAUDE.md` lo importa;
+> gli altri agenti lo leggono quando il lavoro tocca una sua voce.
+> ⚠️ **Fino al 2026-09-27 questo testo era il `CLAUDE.md` del repo**: una nota che nomina il
+> `CLAUDE.md` di `Roccobot/ABP` per una di queste regole parla di questo file.
 
 ## 🛡️ Progetto '/ABP': Regole AdBlock (Roccobot ABP)
 
