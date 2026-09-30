@@ -32,7 +32,7 @@
   numero di versione del sito (es. `v10.1.2`) riguarda solo `arda/top`, non
   questo progetto.
 - **Schema delle eccezioni** (legenda in testa al file). Ogni eccezione attiva
-  porta `$important`, così vince anche sui blocchi `$important` (è un
+  ha `$important`, così vince anche sui blocchi `$important` (è un
   modificatore AdGuard/uBO, non ABP classico). Banche, pagamenti, finanza,
   assicurazioni e PA/identità hanno la **doppia riga** `+ $document,important`
   (fiducia totale alla pagina: disattiva anche cosmetiche e scriptlet). I
@@ -148,7 +148,7 @@
     fuori, è una decisione da prendere, non un'omissione da correggere.
 - **Qwant: la barra 'Usa l'app' si aggancia all'URL, non alle classi** (2026-08-17). Le classi
   di Qwant sono **hashate** (`_1xQVj`, `_2wTg-`) e cambiano a ogni build, quindi come appiglio
-  durerebbero fino al primo deploy. L'invariante è il link, che porta sempre
+  durerebbero fino al primo deploy. L'invariante è il link, che include sempre
   `utm_medium=smartbanner`: da qui `div:has(> div > a[href*="utm_medium=smartbanner"])`.
   - **Il livello del contenitore è misurato, non scelto a occhio**: risalendo dal link, il
     genitore diretto è la barra e il suo genitore è il wrapper (che contiene **solo** il
@@ -160,7 +160,7 @@
 - **Qwant: la card dell'inserzionista si aggancia ai `data-testid`** (2026-09-21), ed è lo
   stesso criterio della barra qui sopra applicato a un bersaglio nuovo: su mobile è comparsa
   una card pubblicitaria sopra i risultati, con la firma del venditore, il titolo, l'immagine e
-  un tasto. I suoi **pezzi** portano marcatori stabili (`advertiserAdsSignature`,
+  un tasto. I suoi **pezzi** hanno marcatori stabili (`advertiserAdsSignature`,
   `advertiserAdsTitle`, `advertiserAdsImage`, `advertiserAdsButton`), la **card** che li
   contiene no, perché le sue classi sono hashate come tutte le altre.
   - **Da qui i due bersagli**: `a[data-testid="aal"]:has([data-testid="advertiserAdsTitle"])`,

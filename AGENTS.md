@@ -1,7 +1,7 @@
 # AGENTS.md: le regole di `Roccobot/ABP`
 
 > **Cos'è questo file.** Quello che ogni agente legge all'avvio in questo repo: Codex, Cursor e
-> Antigravity lo leggono da sé, Claude Code lo importa da `CLAUDE.md`. Porta due blocchi: il
+> Antigravity lo leggono da sé, Claude Code lo importa da `CLAUDE.md`. Contiene due blocchi: il
 > **nucleo universale**, copiato da `rules/Core.md` di `Roccobot/tools` e da modificare solo là,
 > e il **nucleo del repo**, cioè le sue regole in una riga col rimando a `Rules.md`, che ne dà il
 > testo completo e il perché.
@@ -234,7 +234,7 @@ Un file più specifico vince **dove parla**, e il suo silenzio non è una deroga
 - ⚠️ **I percorsi `ABP/...` di `Rules.md` sono quelli di prima del 2026-09-26**, quando il
   progetto era la cartella `ABP/` dell'hub: oggi i due file sono alla radice di questo repo.
 - **Ramo principale `main`**, e ci si lavora direttamente.
-- **Versione: niente SlimVer, una data per lista**. Ogni file porta in testa
+- **Versione: niente SlimVer, una data per lista**. Ogni file contiene in testa
   `! Last updated: AAAA-MM-GG`, che è la sua fonte unica e si aggiorna a ogni commit che ne tocca
   il contenuto (`Rules.md`, voce 'Versione').
 - **Verifica di pubblicazione**: dopo il push si legge l'header `! Last updated:` della lista
@@ -242,7 +242,7 @@ Un file più specifico vince **dove parla**, e il suo silenzio non è una deroga
   `https://roccobot.github.io/ABP/RoccobotWhitelist.txt`) e lo si confronta con quello del commit
   (`Rules.md` dell'hub § '🌿 Branch, allineamento e push').
 - **Schema delle eccezioni**, la cui fonte è la legenda in testa a `RoccobotWhitelist.txt`: ogni
-  eccezione attiva porta `$important`; banche, pagamenti, finanza, assicurazioni e PA/identità
+  eccezione attiva ha `$important`; banche, pagamenti, finanza, assicurazioni e PA/identità
   hanno in più la riga `$document,important`; i widget di pagamento o di verifica in iframe
   (Stripe e simili) usano `$document,subdocument,important` (`Rules.md`, voce 'Schema delle
   eccezioni').
