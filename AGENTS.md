@@ -275,8 +275,9 @@ Un file più specifico vince **dove parla**, e il suo silenzio non è una deroga
   IP di AdGuard. Se a somigliare a un marchio noto è il server delle immagini (`sbito.it` per
   `subito.it`), la pagina si carica e mancano le foto. La
   firma è 'MODIFICATO' con `NOERROR` nel registro delle query; il rimedio è 'Sblocca dominio' nel
-  registro, perché un'eccezione `@@` agisce sul contenuto e non sulla risposta DNS (`Rules.md`,
-  voce su `ERR_CONNECTION_RESET`).
+  registro, perché un'eccezione `@@` agisce sul contenuto e non sulla risposta DNS. Lo sblocco
+  scrive una regola utente del server, che agisce solo con le regole utente attive: se non ha
+  effetto si guarda quell'interruttore, non le cache (`Rules.md`, voce su `ERR_CONNECTION_RESET`).
 - **Brave: si blocca ciò che è opzionale, mai ciò che serve al funzionamento del browser**.
   Restano liberi `go-updater`, `componentupdater`, `brave-core-ext.s3`, `crlsets`,
   `safebrowsing`, `variations` e `sync-v2`, che ha anche la sua eccezione. ⚠️ Bloccare
