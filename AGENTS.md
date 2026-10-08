@@ -270,8 +270,10 @@ Un file più specifico vince **dove parla**, e il suo silenzio non è una deroga
   di AdGuard, con **due** righe: l'eccezione `dominio#@#<selettore vecchio>`, che disattiva la
   regola ancora in vigore nella lista scaricata, e poi la regola nuova (`Rules.md`, voce su
   Facebook).
-- **`ERR_CONNECTION_RESET` su un sito solo**: prima delle liste si guarda la protezione
-  anti-typosquatting del profilo AdGuard DNS, che riscrive la risposta con un IP di AdGuard. La
+- **`ERR_CONNECTION_RESET` su un sito solo, o le sole immagini che mancano**: prima delle liste si
+  guarda la protezione anti-typosquatting del profilo AdGuard DNS, che riscrive la risposta con un
+  IP di AdGuard. Se a somigliare a un marchio noto è il server delle immagini (`sbito.it` per
+  `subito.it`), la pagina si carica e mancano le foto. La
   firma è 'MODIFICATO' con `NOERROR` nel registro delle query; il rimedio è 'Sblocca dominio' nel
   registro, perché un'eccezione `@@` agisce sul contenuto e non sulla risposta DNS (`Rules.md`,
   voce su `ERR_CONNECTION_RESET`).

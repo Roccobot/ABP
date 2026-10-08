@@ -122,6 +122,15 @@
   - **Chi ne è a rischio**: qualunque dominio legittimo il cui nome somigli a quello di un
     servizio molto noto. È l'unica classe di guasti di questa famiglia che si può **prevedere**,
     e vale la pena saperlo perché il sintomo non contiene alcun indizio.
+  - ⚠️⚠️ **E il sito può caricarsi lo stesso, senza le sole IMMAGINI** (accertato il 2026-10-08
+    su Subito). Le foto di `subito.it` vivono su `images.sbito.it`, e `sbito.it` dista una
+    lettera da `subito.it`: la pagina arriva, perché il suo dominio è quello vero, mentre ogni
+    foto mostra l'icona dell'immagine rotta col testo alternativo, su tutti i dispositivi e in
+    ogni browser. Il dominio riscritto è quello del **server delle immagini**, quindi il sintomo
+    non somiglia a un sito irraggiungibile e porta a cercare nelle liste.
+    - **La prova è aprire un'immagine da sola**: dà `ERR_CONNECTION_RESET`, e nel log dell'app
+      compare la firma qui sopra (destinazione `94.140.14.33`). Le nostre due liste, provate col
+      motore di Brave sugli indirizzi veri delle foto, le lasciavano passare.
   - ⚠️ **Le vie che NON funzionano, tutte provate**: `@@||dominio^$document,important` fra le
     regole utente (agisce sul contenuto, mentre qui la risposta arriva già riscritta dal
     server); la modalità di blocco del profilo (irrilevante: non è un blocco, e infatti era
