@@ -137,6 +137,17 @@
     già su 'indirizzo IP zero'); e cercare il colpevole nelle liste, incluse le nostre, che una
     verifica per sottostringa ha scagionato subito. Il rimedio è **'Sblocca dominio'** nel
     registro delle query, cioè un'eccezione del profilo.
+  - ⚠️⚠️ **'Sblocca dominio' scrive una REGOLA UTENTE del server, e una regola utente agisce solo
+    se le regole utente sono ATTIVE** (accertato dall'utente il 2026-10-08 su Subito). Il clic
+    era stato fatto e la regola c'era, ma le regole utente di quel server erano spente
+    dall'interruttore generale, e il server rispondeva ancora `94.140.14.33`. Accese, le foto
+    sono tornate all'istante. Quindi, quando lo sblocco non ha effetto, si guarda prima
+    quell'interruttore; svuotare le cache delle app e dei browser non serve, perché la risposta
+    sbagliata la scrive il server.
+    - **La prova non chiede niente all'utente**: una richiesta DoH al server del dispositivo,
+      con l'identificativo che il registro di AdGuard per Mac mostra nella riga `DNS upstream`,
+      dice se risponde l'IP di AdGuard o quelli veri (quel giorno gli `18.160.249.x` di
+      CloudFront). La richiesta compare nel registro del profilo, con l'IP della sessione.
 - ⚠️ **Brave: si blocca ciò che è OPZIONALE, mai ciò che tiene in piedi il browser**
   (2026-08-17). Le due famiglie non si distinguono dal nome, quindi vanno tenute separate a
   mano e **verificate**: `rewards`, `wallet` (compresi `ethereum-mainnet` e `solana-mainnet`),
