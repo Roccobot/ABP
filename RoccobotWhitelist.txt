@@ -1,5 +1,5 @@
 ! Title: Roccobot Whitelist
-! Last updated: 2026-09-16
+! Last updated: 2026-10-08
 
 ! ── Schema delle eccezioni ──
 ! $important                       : l'eccezione vince anche sui blocchi $important.
@@ -247,6 +247,13 @@
 @@||ryanair.com^$important
 @@||satispay.com^$important
 @@||satispay.com^$document,subdocument,important
+! sbito.it: il server delle foto di Subito (images.sbito.it), a una lettera da
+! subito.it. La protezione anti-typosquatting di AdGuard DNS lo scambia per
+! un'imitazione e riscrive la risposta verso un IP di AdGuard, quindi le foto non si
+! caricano (2026-10-08). Sul server DNS questa riga agisce solo se la lista è fra le
+! sue blocklist personalizzate; nelle app non può correggere una risposta che arriva
+! già riscritta (Rules.md, voce su ERR_CONNECTION_RESET).
+@@||sbito.it^$important
 @@||scontrinosmart.it^$important
 @@||scontrinosmart.it^$document,important
 @@||secureserver.net^$important
