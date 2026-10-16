@@ -273,8 +273,6 @@ Un file più specifico vince **dove parla**, e il suo silenzio non è una deroga
   va nel primo, 'aggiungi un'eccezione' o 'metti in whitelist' nel secondo (`Rules.md`, voce 'Due
   file, due scopi'). I sinonimi delle due liste vivono in `Roccobot.md` § '📦 Terminologia e
   convenzioni di scambio file'.
-- ⚠️ **I percorsi `ABP/...` di `Rules.md` sono quelli di prima del 2026-09-26**, quando il
-  progetto era la cartella `ABP/` dell'hub: oggi i due file sono alla radice di questo repo.
 - **Ramo principale `main`**, e ci si lavora direttamente.
 - **Versione: niente SlimVer, una data per lista**. Ogni file contiene in testa
   `! Last updated: AAAA-MM-GG`, che è la sua fonte unica e si aggiorna a ogni commit che ne tocca

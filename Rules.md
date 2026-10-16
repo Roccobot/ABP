@@ -1,8 +1,8 @@
-# Rules.md: Regole AdBlock (`ABP/`)
+# Rules.md: Regole AdBlock (`Roccobot/ABP`)
 
 > **Cos'è questo file.** Le regole del progetto **'Roccobot ABP'**, le liste di
-> filtri AdBlock/AdGuard di questa cartella. Si carica quando si legge un file di
-> qui; le regole trasversali vivono nel `CLAUDE.md` di **root**.
+> filtri AdBlock/AdGuard di questo repo; le regole trasversali vivono nel `Rules.md` dell'hub
+> `Roccobot/roccobot.github.io`.
 > Vale per **tutti gli agenti**: il nucleo, cioè ogni regola in una riga, vive in `AGENTS.md`,
 > e questo file ne dà il perché. Dal 2026-10-10 nessun agente lo carica da sé, Claude Code
 > compreso: si legge per intero prima di lavorare su una cosa di cui parla.
@@ -11,22 +11,22 @@
 
 ## 🛡️ Progetto '/ABP': Regole AdBlock (Roccobot ABP)
 
-- **Cos'è.** Le liste di filtri AdBlock/AdGuard del repo, nella cartella
-  `ABP/`. Progetto distinto da 'I Grandi di Arda'. Nomi con cui l'utente lo
+- **Cos'è.** Le liste di filtri AdBlock/AdGuard del repo, alla sua radice (fino al
+  2026-09-26 nella cartella `ABP/` dell'hub). Progetto distinto da 'I Grandi di Arda'. Nomi con cui l'utente lo
   chiama: 'Roccobot ABP', 'Regole AdBlock', 'Regole Adguard' o simili.
 - **Due file, due scopi** (sintassi ABP/AdGuard):
-  - `ABP/RoccobotFilters.txt`: regole di **blocco** (righe `||dominio^...`,
+  - `RoccobotFilters.txt`: regole di **blocco** (righe `||dominio^...`,
     cosmetiche `##...`, ecc.).
-  - `ABP/RoccobotWhitelist.txt`: **eccezioni**/whitelist (righe `@@||...`).
+  - `RoccobotWhitelist.txt`: **eccezioni**/whitelist (righe `@@||...`).
 - **Comandi in linguaggio naturale** (mappa fissa):
   - 'Aggiungi alle regole di blocco' (o simili) → aggiungere righe a
-    `ABP/RoccobotFilters.txt`.
+    `RoccobotFilters.txt`.
   - 'Aggiungi un'eccezione' / 'metti in whitelist' (o simili) → mettere mano
-    a `ABP/RoccobotWhitelist.txt`.
+    a `RoccobotWhitelist.txt`.
 - **Sinonimi con cui l'utente chiama le liste**: l'elenco vive in `Roccobot.md`,
   § '📦 Terminologia e convenzioni di scambio file' (una sola fonte, per non far divergere
   due copie); qui basta la corrispondenza coi file: **lista di blocco** =
-  `ABP/RoccobotFilters.txt`, **lista delle eccezioni** = `ABP/RoccobotWhitelist.txt`.
+  `RoccobotFilters.txt`, **lista delle eccezioni** = `RoccobotWhitelist.txt`.
 - **Versione.** Niente SemVer: ogni file ha l'header `! Last updated:
   AAAA-MM-GG`, da aggiornare a ogni commit che ne tocca il contenuto. Il
   numero di versione del sito (es. `v10.1.2`) riguarda solo `arda/top`, non
