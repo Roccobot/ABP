@@ -1,5 +1,5 @@
 ! Title: Roccobot Filters
-! Last updated: 2026-09-21
+! Last updated: 2026-10-19
 
 *ads.js
 *pagead.js
@@ -421,7 +421,6 @@ metrics.mzstatic.com
 mrproblogger.com##.ts-modal*
 myanimelist.net##.sUaidzctQfngSNMH-pdatla
 myanimelist.net###gdpr-modal-bottom
-nhentai.net###download
 notes-analytics-events.apple.com
 notformembersonly.com##.visible-lg-block.visible-md-block
 notformembersonly.com###container > .enlace_descarga
