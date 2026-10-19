@@ -1,5 +1,5 @@
 ! Title: Roccobot Whitelist
-! Last updated: 2026-10-08
+! Last updated: 2026-10-19
 
 ! ── Schema delle eccezioni ──
 ! $important                       : l'eccezione vince anche sui blocchi $important.
@@ -323,6 +323,11 @@
 @@||xnxx-cdn.com^$document,important
 @@||xnxx-cdn.com^$stealth,important
 @@||xnxx-cdn.com^$permissions
+! Zuora: il modulo della carta di GitHub (Billing, Payment method) è una sua pagina
+! ospitata (www.zuora.com/apps/PublicHostedPageLite.do) caricata in un iframe, e
+! bloccata non si apre affatto. Pagamenti, quindi la forma dei widget in iframe.
+@@||zuora.com^$important
+@@||zuora.com^$document,subdocument,important
 
 ! ── Claude / Anthropic ──
 @@||anthropic.com^$important
