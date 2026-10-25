@@ -228,3 +228,26 @@
   condivisi (chiunque può crearvi un sottodominio gratis): la whitelist totale
   lascia passare anche eventuali Worker di terzi. Scelta deliberata dell'utente;
   restringibile ai soli sottodomini `roccobot-b90` se serve.
+
+- ⚠️ **'Non vedo X su questo sito' si prova con tre misure prima di toccare le liste, e a volte non è
+  colpa delle liste** (caso Atlantic Council, 2026-10-25: 'non vedo la parte interattiva della mappa'
+  su `.../#map`).
+  - **Le tre misure, nell'ordine**: (1) la pagina in Chromium senza blocchi, guardando **quale
+    indirizzo si apre davvero**: qui `#map` apriva la home, perché il sito non usa l'hash e la mappa è
+    a `/map`; (2) le richieste vere della pagina provate contro le due liste con un motore di filtri
+    reale (`@ghostery/adblocker`: `FiltersEngine.parse` su `RoccobotFilters.txt` più
+    `RoccobotWhitelist.txt`, poi `engine.match` per ogni URL e tipo di risorsa), che dice che cosa si
+    ferma e che cosa no; (3) la pagina riaperta bloccando un gruppo di domini per volta
+    (`page.route` di Playwright), fino a 'tutto ciò che non è del sito', e si conta ciò che resta
+    (qui 213 forme SVG e 175 cerchi, più la scheda al passaggio del mouse e il pannello al clic).
+  - **L'esito del caso**: le liste fermavano solo Google Analytics (`analytics.google.com`,
+    `doubleclick.net`), nessuna cosmetica toccava il sito, e la mappa, che è SVG con dati dello stesso
+    sito, restava intera anche senza nessun dominio esterno. Non si è toccato niente.
+  - ⚠️ **Non si sblocca per scrupolo**: un'eccezione in più allarga la whitelist senza motivo. Se la
+    prova dice che niente è bloccato, la causa è altrove (l'indirizzo, un'altra lista, un'estensione, il
+    profilo DNS) e si chiede a chi segnala uno screenshot e il registro di AdGuard filtrato per il
+    dominio.
+  - **Trappole del banco**: nel container il Chromium si lancia con
+    `executable_path='/opt/pw-browsers/chromium'` (il Playwright di Python cerca un'altra versione); una
+    voce nuda della lista è una sottostringa per Ghostery e un dominio con i suoi sottodomini per il
+    DNS; gli script della prova vivono nello scratchpad e si rifanno.
