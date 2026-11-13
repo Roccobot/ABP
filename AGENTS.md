@@ -12,7 +12,7 @@
 
 # Core.md: il nucleo delle regole universali
 
-> **Versione**: 3.12
+> **Versione**: 3.20
 >
 > **Cos'è questo file.** Le regole che ogni agente ha **sempre**, su ogni piattaforma e in ogni
 > repo di Roccobot: una per riga, col rimando al perché. Un rimando col solo segno `§` è una
