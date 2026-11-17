@@ -1,5 +1,5 @@
 ! Title: Roccobot Whitelist
-! Last updated: 2026-10-19
+! Last updated: 2026-11-17
 
 ! ── Schema delle eccezioni ──
 ! $important                       : l'eccezione vince anche sui blocchi $important.
@@ -280,12 +280,28 @@
 @@||stripe.com^$document,subdocument,important
 @@||tasgroup.eu^$important
 @@||threadless.com^$important
+! transferwise.com: il vecchio nome di Wise, che rimanda a wise.com (misurato il
+! 2026-11-17); resta per i link vecchi, nelle email e nei segnalibri.
+@@||transferwise.com^$important
+@@||transferwise.com^$document,important
 @@||unisalute.it^$important
 @@||unisalute.it^$document,important
 @@||usercontent.google.com^$document,subdocument,important
 @@||validator.w3.org^$important
 @@||vhx.tv^$important
 @@||vimeocdn.com^$important
+! Wise: pagamenti e conti in più valute, quindi doppia riga. La riga base copre
+! tutti i sottodomini (docs., status., gtm. e sst.). Gli altri domini sono quelli
+! che il sito linka, misurati sulle pagine il 2026-11-17: wise-app.sng.link porta
+! all'app (il sottodominio di Wise sul servizio di link di Singular, non tutto
+! sng.link), wise.jobs alle offerte di lavoro, wiseconnect.io all'evento Wise
+! Connect. Le immagini dei loghi arrivano da dq8dwmysp7hk1.cloudfront.net, e non
+! servono righe: sulle pagine di wise.com le passa già la riga $document.
+@@||wise-app.sng.link^$important
+@@||wise.com^$important
+@@||wise.com^$document,important
+@@||wise.jobs^$important
+@@||wiseconnect.io^$important
 ! WorkOS: piattaforma di autenticazione e identità (SSO, directory sync, AuthKit).
 ! La riga base copre tutti i sottodomini, quindi con una riga sola valgono api.
 ! (l'endpoint che le applicazioni chiamano), auth. (la pagina di login ospitata),
@@ -417,5 +433,7 @@
 @@||signaturit.com^$removeparam
 @@||smart-glocal.com^$removeparam
 @@||stripe.com^$removeparam
+@@||transferwise.com^$removeparam
 @@||unisalute.it^$removeparam
+@@||wise.com^$removeparam
 @@||x.ai^$removeparam
