@@ -1,5 +1,5 @@
 ! Title: Roccobot Whitelist
-! Last updated: 2026-11-17
+! Last updated: 2026-11-20
 
 ! ── Schema delle eccezioni ──
 ! $important                       : l'eccezione vince anche sui blocchi $important.
@@ -342,8 +342,13 @@
 ! Zuora: il modulo della carta di GitHub (Billing, Payment method) è una sua pagina
 ! ospitata (www.zuora.com/apps/PublicHostedPageLite.do) caricata in un iframe, e
 ! bloccata non si apre affatto. Pagamenti, quindi la forma dei widget in iframe.
+! La riga base copre tutti i sottodomini (cdn., info., docs., developer., support.).
+! Il solo altro dominio di Zuora che il sito usa, misurato il 2026-11-20, è
+! nav-assets.zuora.life (menu, caratteri e tracciamento del sito): si sblocca il
+! solo sottodominio, perché zuora.life da solo non risponde.
 @@||zuora.com^$important
 @@||zuora.com^$document,subdocument,important
+@@||nav-assets.zuora.life^$important
 
 ! ── Claude / Anthropic ──
 @@||anthropic.com^$important
@@ -437,3 +442,4 @@
 @@||unisalute.it^$removeparam
 @@||wise.com^$removeparam
 @@||x.ai^$removeparam
+@@||zuora.com^$removeparam
